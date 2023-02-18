@@ -1,4 +1,7 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+
+import theme from "./infrastructure/theme";
 
 import Home from "./screens/Home";
 import NotFound from "./screens/NotFound";
@@ -15,9 +18,11 @@ export function App() {
 
 export function WrappedApp() {
   return (
-    <HashRouter>
-      <App />
-      <Stars />
-    </HashRouter>
+    <ThemeProvider theme={theme}>
+      <HashRouter>
+        <App />
+        <Stars />
+      </HashRouter>
+    </ThemeProvider>
   );
 }
