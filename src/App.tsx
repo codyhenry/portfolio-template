@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { useMediaPredicate } from "react-media-hook";
 
 import { light, dark } from "./infrastructure/theme/light-dark";
 
@@ -21,15 +20,14 @@ export function App() {
 }
 
 export function WrappedApp() {
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState(
+    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+  );
   theme.colors = mode === "light" ? light : dark;
-  // const preferredTheme = useMediaPredicate("(prefers-color-scheme: dark)")
-  //   ? "dark"
-  //   : "light";
+  console.log(mode);
 
   const themeToggle = () => {
     setMode((m) => (m === "light" ? "dark" : "light"));
-    console.log(theme);
   };
   return (
     <ThemeProvider theme={theme}>
