@@ -26,7 +26,7 @@ const animated = (theme: DefaultTheme) => `
   border: 2px solid hsl(237, 100%, 24%);
   outline: none;
   color: #fff;
-  background: #00011b;
+  background: ${theme.colors.bg.primary};
   position: relative;
   z-index: 0;
   border-radius: 10px;
@@ -68,7 +68,7 @@ const animated = (theme: DefaultTheme) => `
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #00011b;
+    background: ${theme.colors.bg.primary};
     left: 0;
     top: 0;
     border-radius: 10px;

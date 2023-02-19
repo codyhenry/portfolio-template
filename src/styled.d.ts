@@ -12,7 +12,6 @@ declare module "styled-components" {
         primary: string;
         secondary: string;
         tertiary: string;
-        quaternary: string;
         disabled: string;
         error: string;
         success: string;
