@@ -5,11 +5,10 @@ import { TextPlugin } from "gsap/TextPlugin";
 
 import { dark } from "../infrastructure/theme/light-dark";
 
+/* CODE FROM
+ * https://css-tricks.com/an-interactive-starry-backdrop-for-content/
+ */
 gsap.registerPlugin(TextPlugin);
-
-/* CODE FROM 
- https://css-tricks.com/an-interactive-starry-backdrop-for-content/
-*/
 
 const Canvas = styled.canvas`
   position: fixed;
