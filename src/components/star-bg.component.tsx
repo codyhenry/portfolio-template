@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 
+import { dark } from "../infrastructure/theme/light-dark";
+
 gsap.registerPlugin(TextPlugin);
 
 /* CODE FROM 
@@ -12,10 +14,13 @@ gsap.registerPlugin(TextPlugin);
 const Canvas = styled.canvas`
   position: fixed;
   inset: 0;
-  background: #00011b;
-  z-index: -1;
+  background: ${dark.bg.sky};
+  z-index: -10;
   height: 100vh;
   width: 100vw;
+  transition: background 0.5s linear;
+  padding: 0;
+  margin: 0;
 `;
 
 function Stars() {
@@ -73,7 +78,7 @@ function Stars() {
       );
       starsRef.current.forEach(
         (star: { alpha: number; x: number; y: number; size: number }) => {
-          contextRef.current.fillStyle = `rgba(141, 174, 185,${star.alpha})`;
+          contextRef.current.fillStyle = `rgba(${dark.bg.stars},${star.alpha})`;
           contextRef.current.beginPath();
           contextRef.current.arc(star.x, star.y, star.size / 2, 0, Math.PI * 2);
           contextRef.current.fill();

@@ -21,8 +21,8 @@ export const light = {
     success: "#138000",
   },
   bg: {
-    primary: "#FFFFFF",
-    secondary: "#F1F1F1",
+    sky: "#F5F5FA",
+    stars: "0, 1, 27",
   },
   text: {
     primary: "#1F1F29",
@@ -42,15 +42,15 @@ export const dark = {
   },
   ui: {
     primary: "#00011B",
-    secondary: "#757575",
-    tertiary: "#F1F1F1",
+    secondary: "#1F1F29",
+    tertiary: "#757575",
     disabled: "#DEDEDE",
     error: "#D0421B",
     success: "#138000",
   },
   bg: {
-    primary: "#00011B",
-    secondary: "#8DAEB9",
+    sky: "#00011B",
+    stars: "141, 174, 185",
   },
   text: {
     primary: "#F5F5FA",

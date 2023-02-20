@@ -17,8 +17,8 @@ declare module "styled-components" {
         success: string;
       };
       bg: {
-        primary: string;
-        secondary: string;
+        sky: string;
+        stars: string;
       };
       text: {
         primary: string;

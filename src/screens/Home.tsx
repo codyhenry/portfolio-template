@@ -1,5 +1,5 @@
 import Spacer from "../components/spacer.component";
-import Card from "../components/card.component";
+import Card from "../components/ui/card.component";
 
 function Home() {
   return (

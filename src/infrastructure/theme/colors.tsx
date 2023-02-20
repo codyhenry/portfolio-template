@@ -1,4 +1,7 @@
-export const colors = {
+/*
+ * Default colors - make sure these match the same as "light"
+ */
+const colors = {
   brand: {
     primary: "#2182BD",
     secondary: "#5282BD",
@@ -13,8 +16,8 @@ export const colors = {
     success: "#138000",
   },
   bg: {
-    primary: "#FFFFFF",
-    secondary: "#F1F1F1",
+    sky: "#F5F5FA",
+    stars: "0, 1, 27",
   },
   text: {
     primary: "#1F1F29",
