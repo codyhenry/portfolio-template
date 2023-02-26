@@ -17,10 +17,10 @@ import Button from "@mui/material/Button";
  * https://mui.com/material-ui/react-app-bar/#DrawerAppBar.tsx
  */
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Home", "About", "Projects", "Resume"];
 const drawerWidth = 240;
 
-function NavBar() {
+function NavBar({ themeChanger }: any) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -42,6 +42,9 @@ function NavBar() {
           </ListItem>
         ))}
       </List>
+      <Button onClick={themeChanger} sx={{ color: "#fff" }}>
+        Switch Theme
+      </Button>
     </Box>
   );
 
@@ -71,6 +74,9 @@ function NavBar() {
                 {item}
               </Button>
             ))}
+            <Button onClick={themeChanger} sx={{ color: "#fff" }}>
+              Switch Theme
+            </Button>
           </Box>
           <Typography
             variant="h6"

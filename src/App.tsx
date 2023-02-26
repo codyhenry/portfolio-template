@@ -6,6 +6,7 @@ import theme from "./infrastructure/theme";
 import useToggle from "./components/toggle-color-mode.component";
 
 import Home from "./screens/Home";
+import About from "./screens/About";
 import NotFound from "./screens/NotFound";
 import Stars from "./components/star-bg.component";
 import NavBar from "./components/ui/navbar.component";
@@ -14,6 +15,7 @@ export function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/About" element={<About />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
@@ -24,15 +26,11 @@ export function App() {
 export function WrappedApp() {
   const [currentTheme, themeToggle] = useToggle();
   theme.colors = currentTheme === "light" ? light : dark;
-
   return (
     <ThemeProvider theme={theme}>
       <HashRouter>
-        <NavBar />
+        <NavBar themeChanger={themeToggle} />
         <App />
-        <button type="button" onClick={themeToggle}>
-          Switch Theme
-        </button>
         <Stars />
       </HashRouter>
     </ThemeProvider>
