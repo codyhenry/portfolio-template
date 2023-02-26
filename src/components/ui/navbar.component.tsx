@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from "styled-components";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
@@ -8,12 +9,16 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { MdMenu } from "react-icons/md";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
-/* CODE FROM
+const NavBarLink = styled(Link)`
+  text-decoration: none;
+`;
+
+/* CODE REFERENCE
  * https://mui.com/material-ui/react-app-bar/#DrawerAppBar.tsx
  */
 
@@ -35,11 +40,10 @@ function NavBar({ themeChanger }: any) {
       <Divider />
       <List>
         {pages.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
+          <ListItemButton key={item}>
+            <Link to={item === "Home" ? "/" : item} />
+            <ListItemText primary={item} />
+          </ListItemButton>
         ))}
       </List>
       <Button onClick={themeChanger} sx={{ color: "#fff" }}>
@@ -70,9 +74,9 @@ function NavBar({ themeChanger }: any) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {pages.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
-              </Button>
+              <NavBarLink key={item} to={item === "Home" ? "/" : item}>
+                <Button sx={{ color: "#fff" }}>{item}</Button>
+              </NavBarLink>
             ))}
             <Button onClick={themeChanger} sx={{ color: "#fff" }}>
               Switch Theme

@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
 import { light, dark } from "./infrastructure/theme/light-dark";
@@ -11,7 +11,7 @@ import NotFound from "./screens/NotFound";
 import Stars from "./components/star-bg.component";
 import NavBar from "./components/ui/navbar.component";
 
-export function App() {
+function Routing() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -23,16 +23,16 @@ export function App() {
 
 // pages should scroll but background and navbar should be static
 
-export function WrappedApp() {
+function App() {
   const [currentTheme, themeToggle] = useToggle();
   theme.colors = currentTheme === "light" ? light : dark;
   return (
     <ThemeProvider theme={theme}>
-      <HashRouter>
-        <NavBar themeChanger={themeToggle} />
-        <App />
-        <Stars />
-      </HashRouter>
+      <NavBar themeChanger={themeToggle} />
+      <Routing />
+      <Stars />
     </ThemeProvider>
   );
 }
+
+export default App;
