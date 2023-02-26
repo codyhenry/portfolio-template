@@ -26,6 +26,7 @@ function Routing() {
 function App() {
   const [currentTheme, themeToggle] = useToggle();
   theme.colors = currentTheme === "light" ? light : dark;
+  theme.type = currentTheme;
   return (
     <ThemeProvider theme={theme}>
       <NavBar themeChanger={themeToggle} />

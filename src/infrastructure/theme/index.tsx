@@ -6,6 +6,7 @@ import spacing from "./spacing";
 const defaultTheme: DefaultTheme = {
   colors,
   spacing,
+  type: "light",
 };
 
 export default defaultTheme;
