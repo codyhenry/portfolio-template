@@ -1,9 +1,12 @@
+import Typography from "@mui/material/Typography";
 import Card from "../components/ui/card.component";
 
 function Home() {
   return (
     <div>
-      <Card variant="animated" />
+      <Typography variant="h1" color="primary">
+        Hello World!
+      </Typography>
     </div>
   );
 }

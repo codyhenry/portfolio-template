@@ -1,9 +1,15 @@
 import { useEffect, useRef } from "react";
-import styled from "styled-components";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import styled from "@emotion/styled";
 
-import { dark } from "../infrastructure/theme/light-dark";
+/**
+ * TODO: Change background colors
+ */
+const colors = {
+  sky: "0, 1, 27",
+  stars: "141, 174, 185",
+};
 
 /* CODE FROM
  * https://css-tricks.com/an-interactive-starry-backdrop-for-content/
@@ -13,7 +19,7 @@ gsap.registerPlugin(TextPlugin);
 const Canvas = styled.canvas`
   position: fixed;
   inset: 0;
-  background: ${dark.bg.sky};
+  background: rgb(${colors.sky});
   z-index: -10;
   height: 100vh;
   width: 100vw;
@@ -30,11 +36,15 @@ function Stars() {
   const scaleRef = useRef(Object(null));
   const alphaRef = useRef(Object(null));
 
+  /**
+   * TODO: Mess around with these values to find something you like
+   */
   const density = 2;
   const size = 3;
   const scale = 2;
   const proximity = 0.15;
   const defaultAlpha = 0.2;
+  const framerate = 30;
 
   useEffect(() => {
     contextRef.current = canvasRef.current.getContext("2d");
@@ -77,7 +87,7 @@ function Stars() {
       );
       starsRef.current.forEach(
         (star: { alpha: number; x: number; y: number; size: number }) => {
-          contextRef.current.fillStyle = `rgba(${dark.bg.stars},${star.alpha})`;
+          contextRef.current.fillStyle = `rgba(${colors.stars},${star.alpha})`;
           contextRef.current.beginPath();
           contextRef.current.arc(star.x, star.y, star.size / 2, 0, Math.PI * 2);
           contextRef.current.fill();
@@ -106,7 +116,7 @@ function Stars() {
     };
     Load();
     gsap.ticker.add(Render);
-    gsap.ticker.fps(30);
+    gsap.ticker.fps(framerate);
 
     window.addEventListener("resize", Load);
     document.addEventListener("pointermove", Update);
