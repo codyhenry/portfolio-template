@@ -1,25 +1,44 @@
-// const sideVariant = {
-//   top: "margin-top",
-//   left: "margin-left",
-//   right: "margin-right",
-//   bottom: "margin-bottom",
-// };
+import { Theme, styled } from "@mui/material/styles";
+/**
+ * EXAMPLE
+ * <Spacer side="right" size="md"/>
+ */
+const sideVariant = {
+  top: "marginTop",
+  left: "marginLeft",
+  right: "marginRight",
+  bottom: "marginBottom",
+};
 
-// interface SpacerProps {
-//   side: string;
-//   size: string;
-// }
+/**
+ * TODO: Customize spacing if necessary
+ * MUI multiplies the value by 8px. EX md: 2 = 2*8px = 16px
+ * https://mui.com/material-ui/customization/spacing/
+ */
+const sizeVariant = {
+  xs: 0.5,
+  sm: 1,
+  md: 2,
+  lg: 3,
+  xl: 4,
+  xxl: 8,
+};
 
-// // translate input values into spacing.js indices
-// const getVariant = (side: string, size: string, theme: DefaultTheme) => {
-//   const marginSize = theme.spacing[size as keyof typeof theme.spacing];
-//   return `${sideVariant[side as keyof typeof sideVariant]}:${marginSize}`;
-// };
+interface SpacerProps {
+  side: string;
+  size: string;
+}
 
-// const Spacer = styled.div<SpacerProps>`
-//   ${({ side, size, theme }) => getVariant(side, size, theme)}
-// `;
+const getVariant = (side: string, size: string, theme: Theme) => {
+  const marginSize = theme.spacing(
+    sizeVariant[size as unknown as keyof typeof sizeVariant]
+  );
+  const sidePosition = sideVariant[side as keyof typeof sideVariant];
+  return { [sidePosition]: marginSize };
+};
 
-// export default Spacer;
+const Spacer = styled("div")<SpacerProps>(({ side, size, theme }) =>
+  getVariant(side, size, theme)
+);
 
-export {};
+export default Spacer;

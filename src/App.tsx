@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { ThemeProvider as MaterialTheme } from "@mui/material/styles";
-import defaultTheme from "./infrastructure/theme";
+import { CssBaseline } from "@mui/material";
+import theme from "./infrastructure/theme";
 
 import Home from "./screens/Home";
 import NotFound from "./screens/NotFound";
@@ -17,9 +18,9 @@ function Routing() {
 }
 
 function App() {
-  console.log(defaultTheme);
   return (
-    <MaterialTheme theme={defaultTheme}>
+    <MaterialTheme theme={theme}>
+      <CssBaseline />
       <NavBar />
       <Routing />
       <Stars />

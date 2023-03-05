@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 import { blueGrey, lightBlue } from "@mui/material/colors";
 
-const defaultTheme = createTheme({
+const theme = createTheme({
   palette: {
     mode: "dark",
     primary: {
@@ -10,7 +10,10 @@ const defaultTheme = createTheme({
     text: {
       primary: blueGrey[50],
     },
+    background: {
+      default: "#00011B",
+    },
   },
 });
 
-export default defaultTheme;
+export default theme;

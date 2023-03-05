@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
-import styled from "@emotion/styled";
-
+import { styled } from "@mui/material/styles";
 /**
  * TODO: Change background colors
  */
@@ -16,7 +15,7 @@ const colors = {
  */
 gsap.registerPlugin(TextPlugin);
 
-const Canvas = styled.canvas`
+const Canvas = styled("canvas")`
   position: fixed;
   inset: 0;
   background: rgb(${colors.sky});
