@@ -1,6 +1,11 @@
 import { createTheme } from "@mui/material/styles";
 import { blueGrey, lightBlue } from "@mui/material/colors";
 
+/**
+ * TODO: personalize your theme object
+ * All options: https://mui.com/material-ui/customization/default-theme/
+ */
+
 const theme = createTheme({
   palette: {
     mode: "dark",
