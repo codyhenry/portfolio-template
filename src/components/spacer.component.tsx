@@ -1,7 +1,7 @@
 import { Theme, styled } from "@mui/material/styles";
 /**
- * EXAMPLE
- * <Spacer side="right" size="md"/>
+ * EXAMPLE : push an element to the right by 16px
+ * <Spacer side="right" size="md" />
  */
 const sideVariant = {
   top: "marginTop",
