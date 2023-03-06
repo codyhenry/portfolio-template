@@ -1,4 +1,5 @@
 import Typography from "@mui/material/Typography";
+
 import Card from "../components/ui/card.component";
 import Spacer from "../components/spacer.component";
 
@@ -8,9 +9,11 @@ function Home() {
       <Typography variant="h1" color="primary">
         Hello World!
       </Typography>
+      <Card />
       <Spacer side="top" size="xxl" />
-      <Typography variant="h2" color="primary">
-        Good Bye
+      <Card />
+      <Typography variant="h1" color="primary">
+        Hello World!
       </Typography>
     </div>
   );
