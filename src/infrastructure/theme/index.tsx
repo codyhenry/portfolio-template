@@ -16,7 +16,7 @@ const theme = createTheme({
       primary: blueGrey[50],
     },
     background: {
-      default: "#00011B",
+      default: "rgb(0, 1, 27)",
     },
   },
 });
