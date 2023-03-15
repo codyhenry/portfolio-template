@@ -9,6 +9,18 @@ import NotFound from "./screens/NotFound";
 import Stars from "./components/star-bg.component";
 import NavBar from "./components/ui/navbar.component";
 
+/**
+ * Home: welcome page for introduction + "tell me about yourself"
+ * School, hobbies, current projects
+ * Links to job sites: Handshake, LinkedIn, Indeed, Github
+ *
+ * About: tool and tech stack + certificates
+ *
+ * Projects: link to github + 4 or 5 projects
+ *
+ * Resume: resume
+ */
+
 function Routing() {
   return (
     <Routes>
