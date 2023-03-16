@@ -19,7 +19,7 @@ import {
   SiHibernate,
 } from "react-icons/si";
 
-import Card from "./ui/card.component";
+import Card from "../ui/card.component";
 
 /* TODO: Add any icons you need (https://react-icons.github.io/react-icons)
  * Create objects with 4 items max, you can have as many objects as you want

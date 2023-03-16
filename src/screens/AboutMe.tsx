@@ -16,18 +16,6 @@ const ScrollableContainer = styled("div")`
  */
 
 // randomize the card coming from top or bottom
-// const cardVariants: Variants = {
-//   offscreen: {
-//     y: -500,
-//   },
-//   onscreen: {
-//     y: 0,
-//     transition: {
-//       damping: 25,
-//       stiffness: 500,
-//     },
-//   },
-// };
 
 function AboutMe() {
   // Jump to sections
