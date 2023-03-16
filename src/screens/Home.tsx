@@ -1,7 +1,7 @@
 import Typography from "@mui/material/Typography";
 
 import Card from "../components/ui/card.component";
-import Spacer from "../components/spacer.component";
+import Spacer from "../components/utility/spacer.component";
 
 function Home() {
   return (

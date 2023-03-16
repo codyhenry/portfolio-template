@@ -6,7 +6,7 @@ import theme from "./infrastructure/theme";
 import Home from "./screens/Home";
 import AboutMe from "./screens/AboutMe";
 import NotFound from "./screens/NotFound";
-import Stars from "./components/star-bg.component";
+import Stars from "./components/ui/star-bg.component";
 import NavBar from "./components/ui/navbar.component";
 
 /**

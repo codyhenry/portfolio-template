@@ -1,8 +1,6 @@
 import { styled } from "@mui/material/styles";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
-
-import Card from "../components/ui/card.component";
 
 const ScrollableContainer = styled("div")`
   overflow-y: scroll;
@@ -13,6 +11,8 @@ const ScrollableContainer = styled("div")`
  * Each group will have 2-4 motion cards
  * iterate through object and create group
  * each group will create motion cards
+ * On hover the cards will show the name + icon
+ * The cards will have a random starting location + rotation
  */
 
 // randomize the card coming from top or bottom
@@ -30,6 +30,10 @@ const ScrollableContainer = styled("div")`
 // };
 
 function AboutMe() {
+  // Jump to sections
+  // Iterate through tech
+
+  // Iterate through tools
   const [move, setMove] = useState(false);
   return (
     <div
