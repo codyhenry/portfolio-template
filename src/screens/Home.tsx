@@ -13,9 +13,7 @@ function Home() {
         School, hobbies, current projects, &quot;tell me about yourself&quot;
         Links to job sites Handshake, LinkedIn, Indeed, Github
       </Typography>
-      <Card />
       <Spacer side="top" size="xxl" />
-      <Card />
     </div>
   );
 }
