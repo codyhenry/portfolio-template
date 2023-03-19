@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { IconType } from "react-icons";
 
 import Skill from "./skill.component";
+import { cardVariants } from "../../assets/animations";
 
 const CardComponent = styled(Paper)(({ theme }) => ({
   backgroundColor: "transparent",
@@ -16,38 +18,24 @@ const CardComponent = styled(Paper)(({ theme }) => ({
 const MotionCard = motion(CardComponent);
 
 interface Props {
-  Content: any;
+  name: string;
+  icon: IconType;
 }
 
-function Card({ Content }: Props) {
-  const [isHovered, setisHovered] = useState(false);
+function Card({ name, icon }: Props) {
+  const cardControls = useAnimation();
+  useEffect(() => {
+    cardControls.start("entered");
+  }, [cardControls]);
   return (
     <MotionCard
-      onHoverStart={() => setisHovered(false)}
-      onHoverEnd={() => setisHovered(true)}
-      whileHover={{
-        rotate: [0, 0, 180, 180, 0],
-        borderRadius: ["0%", "0%", "50%", "50%", "0%"],
-        transition: {
-          duration: 2,
-          ease: "easeInOut",
-          times: [0, 0.2, 0.5, 0.8, 1],
-        },
-      }}
-      animate={{ rotate: isHovered ? [-10, 10, -10, 10, -10, 10, 0] : 0 }}
-      transition={{ duration: 0.5 }}
+      variants={cardVariants}
+      initial="entering"
+      animate={cardControls}
     >
-      {/* <Skill isHidden={isHovered} SkillIcon={} SkillName={""} /> */}
+      <Skill cardControls={cardControls} SkillIcon={icon} skillName={name} />
     </MotionCard>
   );
 }
 
-// when the card is hovered over - perform animation
-// interface CardProps {}
-
-// function Card({ content }) {
-//   const [isHidden, setisHidden] = useState(false);
-// }
-
-// State that changes on hover
 export default Card;

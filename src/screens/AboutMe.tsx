@@ -25,33 +25,10 @@ function AboutMe() {
   // Iterate through tech
 
   // Iterate through tools
-  const [move, setMove] = useState(false);
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "95vh",
-      }}
-    >
-      <motion.div
-        style={{
-          height: 100,
-          width: 100,
-          backgroundColor: "white",
-          borderRadius: 15,
-        }}
-        animate={{ x: move ? 200 : -200 }}
-        initial={false}
-        transition={{ type: "spring" }}
-        onClick={() => {
-          setMove(!move);
-        }}
-      />
-      <GroupCard />
-    </div>
-  );
+
+  return tools.map((subGrouping) => (
+    <GroupCard items={subGrouping} key={subGrouping[0].name} />
+  ));
 }
 /**
  * Icon library is react icons, to find icons:

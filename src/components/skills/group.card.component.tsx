@@ -1,11 +1,24 @@
 import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
+import { IconType } from "react-icons";
+
+import Card from "../ui/card.component";
+
+interface Props {
+  name: string;
+  icon: IconType;
+}
+
+interface GroupCardProps {
+  items: Array<Props>;
+}
 
 // Implement grid
-function GroupCard() {
+function GroupCard({ items }: GroupCardProps) {
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ bgcolor: "#cfe8fc", height: "30vh" }} />
+    <Container>
+      {items.map((group) => (
+        <Card key={group.name} name={group.name} icon={group.icon} />
+      ))}
     </Container>
   );
 }

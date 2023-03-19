@@ -1,23 +1,56 @@
-import { motion } from "framer-motion";
+import { forwardRef, useImperativeHandle } from "react";
+import { AnimationControls, motion, useAnimation } from "framer-motion";
 import Typography from "@mui/material/Typography";
 import { IconType } from "react-icons";
+import { iconVariants, textVariants } from "../../assets/animations";
 
-const SkillName = motion(Typography);
+const SkillText = motion(Typography);
 
 interface CardProps {
-  isHidden: boolean;
+  cardControls: AnimationControls;
   SkillIcon: IconType;
   skillName: string;
 }
 
-function Skill({ isHidden, SkillIcon, skillName }: CardProps) {
+// show name sets to true it will shake
+function Skill({ cardControls, SkillIcon, skillName }: CardProps) {
+  const iconControls = useAnimation();
+  const textControls = useAnimation();
+  const changeCard = async () => {
+    cardControls.start("rotate-right");
+    iconControls.start("active").then(await iconControls.start("finished"));
+
+    textControls.start("active");
+  };
   return (
-    <>
-      <motion.div style={{ opacity: isHidden ? 1 : 0 }}>
-        <SkillIcon />
+    <motion.div
+      style={{
+        height: 100,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+      onHoverStart={changeCard}
+      onHoverEnd={() => {
+        cardControls.start("shake");
+      }}
+    >
+      <motion.div
+        variants={iconVariants}
+        initial="inital"
+        animate={iconControls}
+      >
+        <SkillIcon style={{ fontSize: "clamp(40px,80px,100px)" }} />
       </motion.div>
-      <SkillName sx={{ display: isHidden ? 0 : 1 }}>{skillName}</SkillName>
-    </>
+      <SkillText
+        style={{ backgroundColor: "green" }}
+        initial="initial"
+        animate={textControls}
+        variants={textVariants}
+      >
+        {skillName}
+      </SkillText>
+    </motion.div>
   );
 }
 
