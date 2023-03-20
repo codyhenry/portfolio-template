@@ -1,4 +1,3 @@
-import { forwardRef, useImperativeHandle } from "react";
 import { AnimationControls, motion, useAnimation } from "framer-motion";
 import Typography from "@mui/material/Typography";
 import { IconType } from "react-icons";
@@ -18,9 +17,13 @@ function Skill({ cardControls, SkillIcon, skillName }: CardProps) {
   const textControls = useAnimation();
   const changeCard = async () => {
     cardControls.start("rotate-right");
-    iconControls.start("active").then(await iconControls.start("finished"));
-
+    await iconControls.start("active");
+    iconControls.start("finished");
     textControls.start("active");
+  };
+  const cancelAnimation = async () => {
+    iconControls.stop();
+    textControls.stop();
   };
   return (
     <motion.div
@@ -32,7 +35,10 @@ function Skill({ cardControls, SkillIcon, skillName }: CardProps) {
       }}
       onHoverStart={changeCard}
       onHoverEnd={() => {
+        cancelAnimation();
         cardControls.start("shake");
+        textControls.start("initial");
+        iconControls.start("normal");
       }}
     >
       <motion.div
@@ -43,7 +49,6 @@ function Skill({ cardControls, SkillIcon, skillName }: CardProps) {
         <SkillIcon style={{ fontSize: "clamp(40px,80px,100px)" }} />
       </motion.div>
       <SkillText
-        style={{ backgroundColor: "green" }}
         initial="initial"
         animate={textControls}
         variants={textVariants}

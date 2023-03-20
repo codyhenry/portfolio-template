@@ -3,14 +3,20 @@ export const iconVariants = {
     opacity: 1,
     rotate: 0,
   },
+  normal: {
+    scale: 1,
+    opacity: 1,
+    rotate: 0,
+    display: "block",
+  },
   active: {
-    rotate: [0, 0, -180, -180, 0],
-    opacity: [1, 0.5, 0.2, 0, 0],
+    rotate: [0, 0, 30, 180, 360],
+    opacity: [1, 0.5, 0.5, 0.2, 0],
     scale: 0,
     transition: {
-      duration: 2,
+      duration: 1,
       ease: "easeInOut",
-      times: [0, 0.2, 0.5, 0.8, 1],
+      times: [0, 0, 0.5, 0.8, 1],
     },
   },
   finished: { display: "none" },
@@ -19,15 +25,17 @@ export const iconVariants = {
 export const textVariants = {
   initial: {
     opacity: 0,
+    rotate: 0,
     display: "none",
   },
   active: {
     display: "block",
-    opacity: [0, 0, 0.2, 0.5, 1],
+    rotate: [-180, -180, -180, -360],
+    opacity: [0, 0.2, 0.4, 1],
     transition: {
-      duration: 2,
+      duration: 1,
       ease: "easeInOut",
-      times: [0, 0.2, 0.5, 0.8, 1],
+      times: [0, 0.5, 0.8, 1],
     },
   },
 };
