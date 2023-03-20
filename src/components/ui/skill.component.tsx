@@ -11,19 +11,20 @@ interface CardProps {
   skillName: string;
 }
 
-// show name sets to true it will shake
 function Skill({ cardControls, SkillIcon, skillName }: CardProps) {
   const iconControls = useAnimation();
   const textControls = useAnimation();
+
   const changeCard = async () => {
-    cardControls.start("rotate-right");
-    await iconControls.start("active");
+    cardControls.start("shape-shift");
+    await iconControls.start("leave");
     iconControls.start("finished");
-    textControls.start("active");
+    textControls.start("enter");
   };
   const cancelAnimation = async () => {
     iconControls.stop();
     textControls.stop();
+    cardControls.start("entered");
   };
   return (
     <motion.div
@@ -38,7 +39,7 @@ function Skill({ cardControls, SkillIcon, skillName }: CardProps) {
         cancelAnimation();
         cardControls.start("shake");
         textControls.start("initial");
-        iconControls.start("normal");
+        iconControls.start("enter");
       }}
     >
       <motion.div
