@@ -34,7 +34,7 @@ export const textVariants = {
   },
   enter: {
     display: "block",
-    rotate: [-180, -180, -180, -360],
+    rotate: [-180, -180, -270, -360],
     opacity: [0, 0.2, 0.4, 1],
     transition: {
       duration: 1,
@@ -45,16 +45,25 @@ export const textVariants = {
 };
 
 export const cardVariants = {
-  inital: { scale: 0 },
+  start: { scale: 0 },
   entered: {
     scale: 1,
     rotate: 0,
-    borderRadius: "0%",
-    transition: { scale: { duration: 1, type: "spring" } },
+    borderRadius: 5,
+    transition: {
+      delay: 0.3,
+      scale: { duration: 1.5, type: "spring" },
+    },
+  },
+  reset: {
+    scale: 1,
+    rotate: 0,
+    borderRadius: 5,
+    transition: { scale: { duration: 1.5, type: "spring" } },
   },
   "shape-shift": {
     rotate: [0, 0, 180, 180, 0],
-    borderRadius: ["0%", "0%", "50%", "50%", "0%"],
+    borderRadius: [5, 5, 50, 50, 5],
     transition: {
       duration: 2,
       ease: "easeInOut",
@@ -65,6 +74,16 @@ export const cardVariants = {
     rotate: [-10, 10, -10, 10, -10, 10, 0],
     transition: {
       duration: 0.5,
+    },
+  },
+};
+
+export const groupVariants = {
+  start: { scale: 0 },
+  entered: {
+    scale: 1,
+    transition: {
+      scale: { duration: 1.5, type: "spring" },
     },
   },
 };

@@ -24,7 +24,7 @@ function Skill({ cardControls, SkillIcon, skillName }: CardProps) {
   const cancelAnimation = async () => {
     iconControls.stop();
     textControls.stop();
-    cardControls.start("entered");
+    cardControls.start("reset");
   };
   return (
     <motion.div
