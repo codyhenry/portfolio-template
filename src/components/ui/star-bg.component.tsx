@@ -27,7 +27,7 @@ const Canvas = styled("canvas")`
   margin: 0;
 `;
 
-function Stars() {
+export default function Stars() {
   const canvasRef = useRef(Object(null));
   const contextRef = useRef(Object(null));
   const starsRef = useRef(Object(null));
@@ -129,5 +129,3 @@ function Stars() {
   }, []);
   return <Canvas ref={canvasRef} />;
 }
-
-export default Stars;

@@ -1,4 +1,4 @@
-const Projects = () => {};
+export default function Projects() {}
 /**
  * Cards with projects
  * Each card will have:
@@ -7,4 +7,3 @@ const Projects = () => {};
  * link to Github/Demo
  * optional image
  */
-export default Projects;

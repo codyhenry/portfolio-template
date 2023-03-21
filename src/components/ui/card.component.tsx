@@ -21,7 +21,7 @@ interface Props {
   icon: IconType;
 }
 
-function Card({ name, icon }: Props) {
+export default function Card({ name, icon }: Props) {
   const cardControls = useAnimation();
 
   return (
@@ -36,5 +36,3 @@ function Card({ name, icon }: Props) {
     </MotionCard>
   );
 }
-
-export default Card;

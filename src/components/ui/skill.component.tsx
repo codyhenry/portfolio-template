@@ -11,7 +11,11 @@ interface CardProps {
   skillName: string;
 }
 
-function Skill({ cardControls, SkillIcon, skillName }: CardProps) {
+export default function Skill({
+  cardControls,
+  SkillIcon,
+  skillName,
+}: CardProps) {
   const iconControls = useAnimation();
   const textControls = useAnimation();
 
@@ -59,5 +63,3 @@ function Skill({ cardControls, SkillIcon, skillName }: CardProps) {
     </motion.div>
   );
 }
-
-export default Skill;

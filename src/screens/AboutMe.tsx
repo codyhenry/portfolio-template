@@ -20,7 +20,7 @@ const ScrollableContainer = styled("div")`
 
 // randomize the card coming from top or bottom
 
-function AboutMe() {
+export default function AboutMe() {
   // Jump to sections
   // Iterate through tech
 
@@ -39,4 +39,3 @@ function AboutMe() {
  * Scroll transitions for tools and languages:
  * Make groups of up to 4
  */
-export default AboutMe;

@@ -26,7 +26,7 @@ const NavBarLink = styled(Link)`
 const pages = ["Home", "About", "Projects", "Resume"];
 const drawerWidth = 240;
 
-function NavBar() {
+export default function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -114,5 +114,3 @@ function NavBar() {
     </>
   );
 }
-
-export default NavBar;

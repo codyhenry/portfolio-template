@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import Card from "../components/ui/card.component";
 import Spacer from "../components/utility/spacer.component";
 
-function Home() {
+export default function Home() {
   return (
     <div>
       <Typography variant="h1" color="primary">
@@ -17,5 +17,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;
