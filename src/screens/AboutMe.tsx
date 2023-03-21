@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 import tools from "../components/skills/tool-group.component";
-import GroupCard from "../components/skills/group.card.component";
+import GroupCard from "../components/ui/group.card.component";
 
 const ScrollableContainer = styled("div")`
   overflow-y: scroll;

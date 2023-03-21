@@ -12,7 +12,6 @@ const CardComponent = styled(Paper)(({ theme }) => ({
   height: 100,
   width: 100,
   border: `2px solid ${theme.palette.primary.main}`,
-  borderRadius: 5,
 }));
 
 const MotionCard = motion(CardComponent);

@@ -3,7 +3,7 @@ import { IconType } from "react-icons";
 import { motion, useAnimation } from "framer-motion";
 import { styled } from "@mui/material/styles";
 
-import Card from "../ui/card.component";
+import Card from "./card.component";
 import { groupVariants } from "../../assets/animations";
 
 const CardsContainer = styled(Container)(({ theme }) => ({
@@ -31,9 +31,8 @@ interface GroupCardProps {
   items: Array<Props>;
 }
 
-// motion stagger children
 // marginBottom of lastChild = 0
-function GroupCard({ items }: GroupCardProps) {
+export default function GroupCard({ items }: GroupCardProps) {
   const randomStart = Math.floor(Math.random() * 81 + 10);
   const groupControls = useAnimation();
 
@@ -54,5 +53,3 @@ function GroupCard({ items }: GroupCardProps) {
     </MotionContainer>
   );
 }
-
-export default GroupCard;

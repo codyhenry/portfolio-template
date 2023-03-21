@@ -49,7 +49,7 @@ export const cardVariants = {
   entered: {
     scale: 1,
     rotate: 0,
-    borderRadius: 5,
+    borderRadius: "5px",
     transition: {
       delay: 0.3,
       scale: { duration: 1.5, type: "spring" },
@@ -58,7 +58,7 @@ export const cardVariants = {
   reset: {
     scale: 1,
     rotate: 0,
-    borderRadius: 5,
+    borderRadius: "5px",
     transition: { scale: { duration: 1.5, type: "spring" } },
   },
   "shape-shift": {
@@ -83,7 +83,7 @@ export const groupVariants = {
   entered: {
     scale: 1,
     transition: {
-      scale: { duration: 1.5, type: "spring" },
+      scale: { duration: 1, type: "spring" },
     },
   },
 };
