@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import List from "@mui/material/List";
 import AppBar from "@mui/material/AppBar";
@@ -33,18 +33,20 @@ export default function NavBar() {
     setMobileOpen((prevState) => !prevState);
   };
 
+  // FIX: make styled components & links
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center", bgcolor: "rgba(0,1,27,0.4)", height: "100%" }}
+    >
       <Typography variant="h6" sx={{ my: 2 }}>
         MUI
       </Typography>
-      <Divider />
       <List>
         {pages.map((item) => (
-          <ListItemButton key={item}>
-            <Link to={item === "Home" ? "/" : item} />
-            <ListItemText primary={item} />
-          </ListItemButton>
+          <NavBarLink key={item} to={item === "Home" ? "/" : item}>
+            {item}
+          </NavBarLink>
         ))}
       </List>
     </Box>
@@ -63,7 +65,7 @@ export default function NavBar() {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ mr: 2, display: { sm: "none" }, color: "text.primary" }}
           >
             <MdMenu />
           </IconButton>

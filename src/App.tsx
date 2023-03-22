@@ -4,7 +4,7 @@ import { CssBaseline } from "@mui/material";
 import theme from "./infrastructure/theme";
 
 import Home from "./screens/Home";
-import AboutMe from "./screens/AboutMe";
+import About from "./screens/About";
 import NotFound from "./screens/NotFound";
 import Stars from "./components/ui/star-bg.component";
 import NavBar from "./components/ui/navbar.component";
@@ -25,7 +25,7 @@ function Routing() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/About" element={<AboutMe />} />
+      <Route path="/About" element={<About />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

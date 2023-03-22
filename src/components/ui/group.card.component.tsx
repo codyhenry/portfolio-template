@@ -31,14 +31,14 @@ interface GroupCardProps {
   items: Array<Props>;
 }
 
-// marginBottom of lastChild = 0
+// marginBottom of lastChild = 100
 export default function GroupCard({ items }: GroupCardProps) {
   const randomStart = Math.floor(Math.random() * 81 + 10);
   const groupControls = useAnimation();
 
   return (
     <MotionContainer
-      style={{
+      sx={{
         left: `clamp(10px, calc(${randomStart}% - 300px), calc(95%-300px))`,
       }}
       initial="start"
