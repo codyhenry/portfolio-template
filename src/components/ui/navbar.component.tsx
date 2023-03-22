@@ -1,23 +1,33 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import List from "@mui/material/List";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { MdMenu } from "react-icons/md";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
 
-const NavBarLink = styled(Link)`
-  text-decoration: none;
-`;
+const NavBarButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.text.primary,
+  textDecoration: "none",
+  "&:hover": {
+    backgroundColor: "transparent",
+  },
+}));
+
+const DrawerLink = styled(Link)(({ theme }) => ({
+  color: theme.palette.text.primary,
+  textDecoration: "none",
+  display: "block",
+  marginBottom: theme.spacing(2),
+  width: "100%",
+  height: 30,
+}));
 
 /* CODE REFERENCE
  * https://mui.com/material-ui/react-app-bar/#DrawerAppBar.tsx
@@ -44,9 +54,9 @@ export default function NavBar() {
       </Typography>
       <List>
         {pages.map((item) => (
-          <NavBarLink key={item} to={item === "Home" ? "/" : item}>
+          <DrawerLink key={item} to={item === "Home" ? "/" : item}>
             {item}
-          </NavBarLink>
+          </DrawerLink>
         ))}
       </List>
     </Box>
@@ -77,11 +87,15 @@ export default function NavBar() {
           >
             MUI
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", sm: "flex" } }}>
             {pages.map((item) => (
-              <NavBarLink key={item} to={item === "Home" ? "/" : item}>
-                <Button sx={{ color: "#fff" }}>{item}</Button>
-              </NavBarLink>
+              <Link
+                key={item}
+                to={item === "Home" ? "/" : item}
+                style={{ textDecoration: "none" }}
+              >
+                <NavBarButton>{item}</NavBarButton>
+              </Link>
             ))}
           </Box>
           <Typography
