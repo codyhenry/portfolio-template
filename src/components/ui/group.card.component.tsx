@@ -11,7 +11,8 @@ const CardsContainer = styled(Container)(({ theme }) => ({
   borderRadius: 5,
   width: 300,
   marginLeft: 0,
-  marginBottom: 1000,
+  marginBottom: 100,
+  "&:not(:last-child)": { marginBottom: 1000 },
   minHeight: 250,
   display: "flex",
   flexDirection: "row",
@@ -31,15 +32,17 @@ interface GroupCardProps {
   items: Array<Props>;
 }
 
-// marginBottom of lastChild = 100
 export default function GroupCard({ items }: GroupCardProps) {
-  const randomStart = Math.floor(Math.random() * 81 + 10);
+  const maxLocRight = 81;
+  const minLocLeft = 10;
+  const groupCardSize = 300;
+  const randomStart = Math.floor(Math.random() * maxLocRight + minLocLeft);
   const groupControls = useAnimation();
 
   return (
     <MotionContainer
       sx={{
-        left: `clamp(10px, calc(${randomStart}% - 300px), calc(95%-300px))`,
+        left: `clamp(${minLocLeft}px, calc(${randomStart}% - ${groupCardSize}px), calc(95%-${groupCardSize}px))`,
       }}
       initial="start"
       variants={groupVariants}
