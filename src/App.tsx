@@ -21,6 +21,8 @@ import NavBar from "./components/ui/navbar.component";
  * Resume: resume
  */
 
+// IMPORTANT: make max-screen width much smaller 1920px max prefer 1280px for content
+
 function Routing() {
   return (
     <Routes>

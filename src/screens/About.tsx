@@ -1,5 +1,6 @@
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
+import { SlArrowDown } from "react-icons/sl";
 import tools from "../components/skills/tool-group.component";
 import languages from "../components/skills/language-group.component";
 import GroupCard from "../components/ui/group.card.component";
@@ -9,16 +10,29 @@ const SectionLink = styled("a")(({ theme }) => ({
   textDecoration: "none",
 }));
 
+const ArrowsContainer = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  backgroundColor: "red",
+});
+
 // IMPORTANT: add progress bar for scroll distance make sectionlinks sticky so they scroll too
 // IMPORTANT: add animated arrows pointing down
 // IMPORTANT: center the typography
 export default function About() {
   return (
     <>
-      <Typography variant="h1">My Skills</Typography>
-      <Typography variant="h4">
+      <Typography variant="h3">My Skills</Typography>
+      <Typography variant="subtitle1">
         Snippet explaining stuff about skills
       </Typography>
+      <ArrowsContainer>
+        <Typography variant="h4">Take a Look!</Typography>
+        <div>
+          <SlArrowDown />
+        </div>
+      </ArrowsContainer>
       {/* Jump to sections */}
       <SectionLink href="#languages-section">Languages</SectionLink>
       <SectionLink href="#tools-section">Tools</SectionLink>
