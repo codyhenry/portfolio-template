@@ -8,6 +8,7 @@ import About from "./screens/About";
 import NotFound from "./screens/NotFound";
 import Stars from "./components/ui/star-bg.component";
 import NavBar from "./components/ui/navbar.component";
+import ContentContainer from "./components/utility/content-container.component";
 
 /**
  * Home: welcome page for introduction + "tell me about yourself"
@@ -38,7 +39,9 @@ function App() {
     <MaterialTheme theme={theme}>
       <CssBaseline />
       <NavBar />
-      <Routing />
+      <ContentContainer>
+        <Routing />
+      </ContentContainer>
       <Stars />
     </MaterialTheme>
   );

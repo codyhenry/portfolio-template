@@ -1,9 +1,10 @@
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import { SlArrowDown } from "react-icons/sl";
+
+import GroupCard from "../components/ui/group.card.component";
 import tools from "../components/skills/tool-group.component";
 import languages from "../components/skills/language-group.component";
-import GroupCard from "../components/ui/group.card.component";
 
 const SectionLink = styled("a")(({ theme }) => ({
   color: theme.palette.text.primary,
