@@ -78,7 +78,7 @@ export const cardVariants = {
   },
 };
 
-export const groupVariants = {
+export const cardGroupVariants = {
   start: { scale: 0 },
   entered: {
     scale: 1,
@@ -86,4 +86,39 @@ export const groupVariants = {
       scale: { duration: 1, type: "spring" },
     },
   },
+};
+
+export const testVariants = {
+  start: { opacity: 0 },
+  entered: {
+    opacity: 1,
+    transition: { delayChildren: 0, staggerChildren: 0.7 },
+  },
+};
+
+export const titleVariants = {
+  start: { y: "100vw", color: "#eceff1" },
+  entered: {
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      mass: 0.3,
+    },
+  },
+  colorflip: { color: "#29b6f6" },
+};
+
+export const subtitleVariants = {
+  start: { y: -250, opacity: 0, rotate: -45 },
+  entered: { y: 0, opacity: 1, rotate: 0, transition: { duration: 3 } },
+};
+
+export const sentenceVariants = {
+  entered: { transition: { delay: 0.5, staggerChildren: 0.1 } },
+};
+
+export const letterVariants = {
+  start: { opacity: 0, y: 50 },
+  entered: { opacity: 1, y: 0 },
 };

@@ -4,7 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { styled } from "@mui/material/styles";
 
 import Card from "./card.component";
-import { groupVariants } from "../../assets/animations";
+import { cardGroupVariants } from "../../assets/animations";
 
 const CardsContainer = styled(Container)(({ theme }) => ({
   border: `2px solid ${theme.palette.primary.main}`,
@@ -45,7 +45,7 @@ export default function GroupCard({ items }: GroupCardProps) {
         left: `clamp(${minLocLeft}px, calc(${randomStart}% - ${groupCardSize}px), calc(95%-${groupCardSize}px))`,
       }}
       initial="start"
-      variants={groupVariants}
+      variants={cardGroupVariants}
       animate={groupControls}
       whileInView="entered"
       viewport={{ once: false, amount: 0.5 }}
