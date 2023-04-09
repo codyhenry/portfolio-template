@@ -109,11 +109,6 @@ export const titleVariants = {
   colorflip: { color: "#29b6f6" },
 };
 
-export const subtitleVariants = {
-  start: { y: -250, opacity: 0, rotate: -45 },
-  entered: { y: 0, opacity: 1, rotate: 0, transition: { duration: 3 } },
-};
-
 export const sentenceVariants = {
   entered: { transition: { delay: 0.5, staggerChildren: 0.1 } },
 };
