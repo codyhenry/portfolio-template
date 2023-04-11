@@ -51,7 +51,7 @@ const tools = [
   ],
   [
     { name: "Postman", icon: SiPostman },
-    { name: "Hibernate ORM", icon: SiHibernate },
+    { name: "Hibernate", icon: SiHibernate },
     { name: "Node JS", icon: SiNodedotjs },
   ],
 ];
