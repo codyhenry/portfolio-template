@@ -36,7 +36,7 @@ export default function AnimatedSubtitle({
         return (
           <motion.span
             // eslint-disable-next-line react/no-array-index-key
-            key={`${sentence[sentence.length % index]}:${char}:${index}`}
+            key={`${char}:${index}`}
             variants={letterVariants}
           >
             {char}
