@@ -3,14 +3,12 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 
 import AnimatedSubtitle from "./introSubtitle.component";
-
-import { titleVariants, testVariants } from "../../assets/animations";
-
+import { titleVariants, introContainerVariants } from "../../assets/animations";
 import introductions from "../bio/intro-statements";
 
 const AnimatedTitle = motion(Typography);
 AnimatedTitle.defaultProps = {
-  variant: "h5",
+  variant: "h4",
   color: "primary",
   variants: titleVariants,
 };
@@ -33,10 +31,14 @@ export default function Introductions() {
   }, [subtitleControls, testControls]);
 
   return (
-    <motion.div variants={testVariants} initial="start" animate={testControls}>
+    <motion.div
+      variants={introContainerVariants}
+      initial="start"
+      animate={testControls}
+    >
       {introductions.map((intro) => {
         return (
-          <AnimatedTitle key={intro.title}>
+          <AnimatedTitle key={intro.title} style={{ margin: 15 }}>
             {intro.title}
             <AnimatedSubtitle
               animControls={subtitleControls}

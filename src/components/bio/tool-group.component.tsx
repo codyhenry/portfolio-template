@@ -21,9 +21,6 @@ import {
  * Create objects with 4 items max, you can have as many objects as you want
  */
 
-// onhover icon should disappear and name should appear
-// onhover card should shake
-// this array is going to card group
 /** TODO: group the tools how you would like them to appear in the about me section
  */
 

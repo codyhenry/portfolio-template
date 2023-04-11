@@ -12,9 +12,7 @@ import Introductions from "../components/ui/intro.component";
  */
 
 /**
- * Fade in for the subtitle
- * Typewriter effect for the sentence
- * When sentence animation is finished call onAnimationComplete to change color of the subtitle
+ * Create Container to hold all components with display flex and use gap instead of spacer
  */
 
 // const Subtitle = styled(motion(Typography))({

@@ -1,6 +1,11 @@
 import Typography from "@mui/material/Typography";
 import { AnimationControls, motion } from "framer-motion";
 
+const letterVariants = {
+  start: { opacity: 0, y: 50 },
+  entered: { opacity: 1, y: 0 },
+};
+
 interface AnimSubtitleProps {
   sentence: string;
   animControls: AnimationControls;
@@ -16,14 +21,9 @@ export default function AnimatedSubtitle({
     },
   };
 
-  const letterVariants = {
-    start: { opacity: 0, y: 50 },
-    entered: { opacity: 1, y: 0 },
-  };
-
   const Subtitle = motion(Typography);
   Subtitle.defaultProps = {
-    variant: "body1",
+    variant: "h5",
     color: "text.primary",
     initial: "start",
     animate: animControls,
