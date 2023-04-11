@@ -109,12 +109,3 @@ export const titleVariants = {
   },
   colorflip: { color: "#29b6f6" },
 };
-
-export const sentenceVariants = {
-  entered: { transition: { delay: 0.5, staggerChildren: 0.1 } },
-};
-
-export const letterVariants = {
-  start: { opacity: 0, y: 50 },
-  entered: { opacity: 1, y: 0 },
-};
