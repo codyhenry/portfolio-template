@@ -20,6 +20,7 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint", "prettier"],
   rules: {
+    "prettier/prettier": ["error", { endOfLine: "auto" }],
     "@typescript-eslint/quotes": [
       "error",
       "double",

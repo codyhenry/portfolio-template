@@ -5,10 +5,6 @@ import Introductions from "../components/ui/intro.component";
 /**
  * School, hobbies, current projects, "tell me about yourself"
  * Links to job sites Handshake, LinkedIn, Indeed, Github
- * UCF stuff
- * Graduated from: University of Central Florida
- * Developer at: Pro College Consulting
- * Interested in: Full stack development Embedded Systems
  */
 
 /**
