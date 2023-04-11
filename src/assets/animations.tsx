@@ -94,6 +94,7 @@ export const testVariants = {
     opacity: 1,
     transition: { delayChildren: 0, staggerChildren: 0.7 },
   },
+  colorflip: {},
 };
 
 export const titleVariants = {
