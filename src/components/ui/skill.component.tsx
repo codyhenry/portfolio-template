@@ -29,7 +29,9 @@ export default function Skill({
     iconControls.stop();
     textControls.stop();
     cardControls.start("reset");
+    cardControls.set("entered");
   };
+
   return (
     <motion.div
       style={{
@@ -42,7 +44,7 @@ export default function Skill({
       onHoverEnd={() => {
         cancelAnimation();
         cardControls.start("shake");
-        textControls.start("initial");
+        textControls.set("initial");
         iconControls.start("enter");
       }}
     >
