@@ -1,6 +1,7 @@
 import Greeting from "../components/ui/greeting.component";
 import Spacer from "../components/utility/spacer.component";
 import Introductions from "../components/ui/intro.component";
+import IntroAboutMe from "../components/ui/intro-about.component";
 
 /**
  * School, hobbies, current projects, "tell me about yourself"
@@ -22,6 +23,8 @@ export default function Home() {
       <Greeting />
       <Spacer side="top" size="xxl" />
       <Introductions />
+      <Spacer side="top" size="xxl" />
+      <IntroAboutMe />
     </>
   );
 }

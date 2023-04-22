@@ -20,7 +20,7 @@ const ArrowsContainer = styled("div")({
 
 // IMPORTANT: add progress bar for scroll distance make sectionlinks sticky so they scroll too
 // IMPORTANT: add animated arrows pointing down
-// IMPORTANT: center the typography
+// TODO: change section links to "top" and "bottom"
 export default function About() {
   return (
     <>
@@ -30,7 +30,8 @@ export default function About() {
       </Typography>
       <ArrowsContainer>
         <Typography variant="h4">Take a Look!</Typography>
-        <div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <SlArrowDown />
           <SlArrowDown />
         </div>
       </ArrowsContainer>

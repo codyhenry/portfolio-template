@@ -1,5 +1,6 @@
 import Typography from "@mui/material/Typography";
 
+// TODO: move the text to bio and import
 export default function Greeting() {
   return (
     <>
